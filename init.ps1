@@ -5,8 +5,7 @@ param (
 )
 
 if (-not(Test-Path $secrets_file)) {
-    Write-Error "The secrets file is missing!"
-    exit
+    throw "The secrets file is missing!"
 }
 
 $secrets = Get-Content $secrets_file -Raw | ConvertFrom-Json
