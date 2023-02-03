@@ -1,6 +1,6 @@
 package com.subcriptly.models;
 
-public class Env {
+public class Project {
    public String getTestValue() {
        return "AntonyBaasan";
    }
