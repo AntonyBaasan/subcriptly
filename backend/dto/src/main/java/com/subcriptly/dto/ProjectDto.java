@@ -1,15 +1,16 @@
-package com.subcriptly.models;
+package com.subcriptly.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 
-public class Project {
-    @Getter @Setter
+public class ProjectDto {
+    @Getter
+    @Setter
     private String id;
-
-    @Getter @Setter
+    @Getter
+    @Setter
     private String name;
-
-    @Getter @Setter
+    @Getter
+    @Setter
     private String description;
 }

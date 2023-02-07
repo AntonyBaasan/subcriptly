@@ -1,4 +1,4 @@
-# get list of projects
+### get list of projects
 http://localhost:8080/project/
 
 ### get a project (default demo project)

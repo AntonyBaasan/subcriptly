@@ -16,13 +16,13 @@ public class ProjectServiceImpl implements ProjectService {
         var project1 = new Project();
         project1.setId("abc123");
         project1.setName("Demo project");
-        project1.setName("description is here");
+        project1.setDescription("description is here");
         projectMap.put(project1.getId(), project1);
 
         var project2 = new Project();
         project2.setId("demo2");
         project2.setName("Second project");
-        project2.setName("description is awesome");
+        project2.setDescription("description is awesome");
         projectMap.put(project2.getId(), project2);
     }
 
