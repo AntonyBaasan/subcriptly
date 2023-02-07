@@ -1,0 +1,6 @@
+2023-02-07 00:18:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PROJECT" not found (this database is empty); SQL statement:
+select p1_0.id,p1_0.description,p1_0.name from project p1_0 [42104-214]
+2023-02-07 00:18:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PROJECT" not found (this database is empty); SQL statement:
+select p1_0.id,p1_0.description,p1_0.name from project p1_0 [42104-214]

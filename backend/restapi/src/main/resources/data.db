@@ -1,0 +1,8 @@
+CREATE TABLE PROJECT(
+    ID NVARCHAR PRIMARY KEY,
+    NAME VARCHAR(255),
+    DESCRIPTION VARCHAR(1000)
+);
+
+INSERT INTO project (id, name) VALUES ('projec1', 'Project One');
+INSERT INTO project (id, name) VALUES ('projec2', 'Project Two');
