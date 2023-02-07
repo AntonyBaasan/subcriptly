@@ -1,13 +1,10 @@
-# test
-http://localhost:8080/project/hello
-
 # get list of projects
 http://localhost:8080/project/
 
-# get a project (default demo project)
+### get a project (default demo project)
 http://localhost:8080/project/abc123
 
-# create a project
+### create a project
 POST http://localhost:8080/project
 content-type: application/json
 
@@ -16,7 +13,7 @@ content-type: application/json
     "description": "Awesome description",
 }
 
-# update the demo project
+### update the demo project
 POST http://localhost:8080/project
 content-type: application/json
 

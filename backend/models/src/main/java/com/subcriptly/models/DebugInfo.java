@@ -6,7 +6,7 @@ public class DebugInfo {
     @Getter
     private String version = "0.1";
 
-    public String getOs() {
+    public String getOsName() {
         return System.getProperty("os.name");
     }
 }
