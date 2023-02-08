@@ -1,2 +1,6 @@
 rootProject.name = 'subcriptly'
-include 'models', 'restapi', 'services', 'dto'
+include 'models'
+include 'restapi'
+include 'services'
+include 'dto'
+include 'dbmanager'
