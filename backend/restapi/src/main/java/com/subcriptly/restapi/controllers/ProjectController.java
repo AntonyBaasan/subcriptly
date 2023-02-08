@@ -27,10 +27,18 @@ public class ProjectController {
         var project = projectService.get(id);
         return convertProjectToDto(project);
     }
+
     @PostMapping("")
     public ProjectDto create(@RequestBody ProjectDto projectDto) {
-        var project = new Project();
+        Project project = convertProjectToObject(projectDto);
         projectService.create(project);
+        return convertProjectToDto(project);
+    }
+
+    @PutMapping("/{id}")
+    public ProjectDto update(@PathVariable("id") String id, @RequestBody ProjectDto projectDto) {
+        Project project = convertProjectToObject(projectDto);
+        projectService.update(id, project);
         return convertProjectToDto(project);
     }
     private ProjectDto convertProjectToDto(Project project) {

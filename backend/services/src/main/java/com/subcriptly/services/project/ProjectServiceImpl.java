@@ -35,6 +35,7 @@ public class ProjectServiceImpl implements ProjectService {
         Project projectDb = repository.findById(id).get();
         projectDb.setName(project.getName());
         projectDb.setDescription(project.getDescription());
+        repository.save(projectDb);
         return project;
     }
 

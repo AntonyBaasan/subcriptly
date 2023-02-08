@@ -1,5 +1,5 @@
 ### get list of projects
-http://localhost:8080/project/
+http://localhost:8080/project
 
 ### get a project (default demo project)
 http://localhost:8080/project/abc123
@@ -10,17 +10,16 @@ content-type: application/json
 
 {
     "name": "Super Game 1",
-    "description": "Awesome description",
+    "description": "Awesome description"
 }
 
 ### update the demo project
-POST http://localhost:8080/project
+PUT http://localhost:8080/project/abc123
 content-type: application/json
 
 {
-    "id": "abc123",
-    "name": "Super Game 1",
-    "description": "Awesome description",
+    "name": "Update name",
+    "description": "Updateds description"
 }
 
 # upload zip file a project
