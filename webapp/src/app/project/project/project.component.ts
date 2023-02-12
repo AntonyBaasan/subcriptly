@@ -12,9 +12,9 @@ export class ProjectComponent {
   }
 
   ngOnInit() {
-    this.route.data
-      .subscribe(data => {
-        console.log(data);
+    this.route.params
+      .subscribe(params => {
+        this.projectId = params['id'];
       });
   }
 }
