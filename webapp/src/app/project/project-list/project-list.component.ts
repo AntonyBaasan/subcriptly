@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./project-list.component.sass']
 })
 export class ProjectListComponent {
-
+  projects: any[] = [
+    { 'id': '1', 'name': 'test1' },
+    { 'id': '2', 'name': 'test2' }
+  ]
 }

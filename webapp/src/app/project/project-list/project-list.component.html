@@ -1,1 +1,4 @@
 <p>project-list works!</p>
+<li *ngFor="let project of projects">
+  <a routerLink="/project/{{project.id}}"> {{ project.id }} || {{ project.name }} </a>
+</li>
