@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ProjectService } from 'src/app/services/project.service';
 
 @Component({
   selector: 'app-project-list',
@@ -6,8 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./project-list.component.sass']
 })
 export class ProjectListComponent {
-  projects: any[] = [
-    { 'id': '1', 'name': 'test1' },
-    { 'id': '2', 'name': 'test2' }
-  ]
+  projects: Observable<any[]> | undefined;
+
+  constructor(private projectService: ProjectService) {}
+
+  ngOnInit() {
+    this.projects = this.projectService.getAll();
+
+  }
+
 }
