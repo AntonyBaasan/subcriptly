@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./project.component.sass']
 })
 export class ProjectComponent {
-  projectId: string = "";
+  projectId = "";
   constructor(private route: ActivatedRoute) {
   }
 
