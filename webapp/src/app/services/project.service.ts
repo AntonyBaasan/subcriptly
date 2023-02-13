@@ -1,25 +1,31 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
-import { of } from 'rxjs/internal/observable/of';
+import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { ProjectDto } from '../Models/Project';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProjectService {
 
-  MOCK: any[] = [
-    { id: 'mock1', name: 'mock data', description: 'something' },
-    { id: 'mock2', name: 'mock two', description: 'desc' }
-  ];
+  url = environment.backendUrl + '/project';
 
-  constructor() { }
+  // MOCK: ProjectDto[] = [
+  //   { id: 'mock1', name: 'mock data', description: 'something' },
+  //   { id: 'mock2', name: 'mock two', description: 'desc' }
+  // ];
+
+  constructor(private httpClient: HttpClient) { }
 
   getAll(): Observable<any[]> {
-    return of<any>(this.MOCK);
+    return this.httpClient.get<ProjectDto[]>(this.url);
+    // return of<any>(this.MOCK);
   }
 
-  getById(id: string): Observable<any> {
-    return of<any>(this.MOCK.find(m => m.id === id));
+  getById(id: string): Observable<ProjectDto> {
+    return this.httpClient.get<ProjectDto>(this.url + '/' + id);
+    // return of<any>(this.MOCK.find(m => m.id === id));
   }
 
 }
