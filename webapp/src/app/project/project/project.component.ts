@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { Observable } from 'rxjs';
 import { ProjectDto } from 'src/app/Models/Project';
 import { ProjectService } from 'src/app/services/project.service';
@@ -14,7 +15,11 @@ export class ProjectComponent implements OnInit {
   projectId = '';
   project: Observable<ProjectDto> | undefined;
 
-  constructor(private route: ActivatedRoute, private projectService: ProjectService) {
+  constructor(
+    private route: ActivatedRoute,
+    private projectService: ProjectService,
+    private router: Router
+    ) {
   }
 
   ngOnInit() {
@@ -23,6 +28,10 @@ export class ProjectComponent implements OnInit {
         this.projectId = params['id'];
         this.project = this.projectService.getById(this.projectId);
       });
+  }
+
+  back() {
+    this.router.navigate(['project']);
   }
 
   addApp() {
