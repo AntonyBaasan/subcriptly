@@ -24,4 +24,8 @@ export class ProjectComponent implements OnInit {
         this.project = this.projectService.getById(this.projectId);
       });
   }
+
+  addApp() {
+    console.log('TODO: Add app!');
+  }
 }

@@ -1,6 +1,8 @@
-<p>project works!</p>
 <div>ProjectId: {{ projectId }}</div>
 <div *ngIf="project | async">
   <div>Name: {{ (project | async)?.name }}</div>
   <div>Description: {{ (project | async)?.description }}</div>
+</div>
+<div>
+  <button (click)="addApp()">Add App</button>
 </div>

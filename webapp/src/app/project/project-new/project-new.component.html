@@ -7,5 +7,5 @@
 </form>
 <div>
   <button (click)="cancel()">Cancel</button>
-  <button (click)="ok()">OK</button>
+  <button (click)="ok()" [disabled]="!newProjectForm.valid">OK</button>
 </div>
