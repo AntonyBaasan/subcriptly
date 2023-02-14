@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { ProjectDto } from 'src/app/Models/Project';
 import { ProjectService } from 'src/app/services/project.service';
 
 @Component({
@@ -8,8 +9,9 @@ import { ProjectService } from 'src/app/services/project.service';
   templateUrl: './project-list.component.html',
   styleUrls: ['./project-list.component.sass']
 })
-export class ProjectListComponent {
-  projects: Observable<any[]> | undefined;
+export class ProjectListComponent implements OnInit {
+
+  projects: Observable<ProjectDto[]> | undefined;
 
   constructor(private projectService: ProjectService, private router: Router) { }
 

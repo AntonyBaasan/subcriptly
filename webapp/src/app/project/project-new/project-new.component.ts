@@ -6,6 +6,7 @@ import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ProjectDto } from 'src/app/Models/Project';
 import { environment } from 'src/environments/environment';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-project-new',
@@ -13,8 +14,14 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./project-new.component.sass']
 })
 export class ProjectNewComponent {
+
+  newProjectForm = new FormGroup({
+    name: new FormControl('', Validators.required),
+    description: new FormControl('')
+  });
+
   url = environment.backendUrl + '/project';
-  projects: Observable<any[]> | undefined;
+  projects: Observable<ProjectDto[]> | undefined;
 
   constructor(
     private projectService: ProjectService,
@@ -22,15 +29,11 @@ export class ProjectNewComponent {
     private httpClient: HttpClient,
     private location: Location) { }
 
-  ngOnInit() {
-
-  }
-
   ok() {
-    let project: ProjectDto = {
+    const project: ProjectDto = {
       id: 'new',
-      name: 'from Angular',
-      description: 'from Angular description'
+      name: this.newProjectForm.value['name'] || '',
+      description: this.newProjectForm.value['description'] || ''
     }
     this.httpClient.post<ProjectDto>(this.url, project)
       .subscribe(response => {

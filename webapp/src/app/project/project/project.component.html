@@ -1,2 +1,6 @@
 <p>project works!</p>
-<p>{{ projectId }}</p>
+<div>ProjectId: {{ projectId }}</div>
+<div *ngIf="project | async">
+  <div>Name: {{ (project | async)?.name }}</div>
+  <div>Description: {{ (project | async)?.description }}</div>
+</div>

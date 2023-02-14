@@ -1,4 +1,10 @@
 <p>project-new works!</p>
+<form [formGroup]="newProjectForm" >
+  <div><label for="name">Name:</label></div>
+  <div><input id="name" type="text" formControlName="name"/></div>
+  <div><label for="description">Description:</label></div>
+  <div><input id="description" type="text" formControlName="description"/></div>
+</form>
 <div>
   <button (click)="cancel()">Cancel</button>
   <button (click)="ok()">OK</button>
