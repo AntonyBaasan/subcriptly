@@ -23,6 +23,6 @@ dependencies {
 	implementation group: 'com.h2database', name: 'h2', version: '2.1.214'
 }
 
-tasks.named('test') {
-	useJUnitPlatform()
-}
+//tasks.named('test') {
+//	useJUnitPlatform()
+//}
