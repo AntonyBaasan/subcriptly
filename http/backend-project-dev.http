@@ -22,5 +22,8 @@ content-type: application/json
     "description": "Updateds description"
 }
 
+### delete
+DELETE http://localhost:8080/project/6089cb19-a37d-4d60-9784-c502dcf30525
+
 # upload zip file a project
 # POST http://localhost:8080/project/upload

@@ -34,6 +34,11 @@ public class ProjectController {
         projectService.create(project);
         return convertProjectToDto(project);
     }
+    @DeleteMapping("{id}")
+    public boolean delete(@PathVariable("id") String id) {
+        projectService.delete(id);
+        return true;
+    }
 
     @PutMapping("/{id}")
     public ProjectDto update(@PathVariable("id") String id, @RequestBody ProjectDto projectDto) {
