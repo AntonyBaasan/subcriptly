@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ProjectDto } from 'src/app/Models/Project';
+import { ProjectDto } from 'src/app/Models';
 import { ProjectService } from 'src/app/services/project.service';
 
 @Component({
@@ -17,7 +17,6 @@ export class ProjectListComponent implements OnInit {
 
   ngOnInit() {
     this.projects = this.projectService.getAll();
-
   }
 
   create() {

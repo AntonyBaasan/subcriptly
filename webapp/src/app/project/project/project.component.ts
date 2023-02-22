@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common';
 import { Observable } from 'rxjs';
-import { ProjectDto } from 'src/app/Models/Project';
+import { ProjectDto } from 'src/app/Models';
 import { ProjectService } from 'src/app/services/project.service';
 
 @Component({

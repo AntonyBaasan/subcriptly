@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { ProjectService } from 'src/app/services/project.service';
 import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { ProjectDto } from 'src/app/Models/Project';
+import { ProjectDto } from 'src/app/Models';
 import { environment } from 'src/environments/environment';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -39,6 +39,7 @@ export class ProjectNewComponent {
       .subscribe(response => {
         console.log(response);
         this.router.navigate(['/project']);
+        this.router.navigate(['project',response.id]);
       });
 
   }
