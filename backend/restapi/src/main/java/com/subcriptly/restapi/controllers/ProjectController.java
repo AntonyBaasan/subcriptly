@@ -46,6 +46,8 @@ public class ProjectController {
         projectService.update(id, project);
         return convertProjectToDto(project);
     }
+
+    // TODO: move below utility logic into service classes
     private ProjectDto convertProjectToDto(Project project) {
         ProjectDto dto = modelMapper.map(project, ProjectDto.class);
         return dto;
