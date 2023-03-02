@@ -19,9 +19,11 @@ public class Item {
     @JoinColumn(name="project_id")
     private Project project;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name="item_type_id")
     private ItemType itemType;
 
+    @OneToOne(mappedBy = "item")
+    private ItemArtifact itemArtifact;
 }
 

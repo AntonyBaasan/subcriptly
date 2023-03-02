@@ -10,11 +10,9 @@ public class ItemArtifact {
     @GeneratedValue
     private Long id;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "item_id")
-    private String name;
+    private Item item;
 
-    @ManyToOne
-    @JoinColumn(name = "item_id")
     private String location;
 }
