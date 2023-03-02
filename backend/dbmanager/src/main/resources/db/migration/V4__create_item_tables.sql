@@ -4,7 +4,7 @@ create table ITEM (
     NAME nvarchar(200) not null,
     DESCRIPTION nvarchar(2000) null,
     PROJECT_ID nvarchar(100) not null,
-    TYPE integer
+    ITEM_TYPE_ID integer
 );
 
 insert into ITEM (ID, NAME, DESCRIPTION, PROJECT_ID)
@@ -19,7 +19,9 @@ create table ITEM_TYPE (
 );
 
 insert into ITEM_TYPE (NAME)
-values ('Application');
+values ('Static Website');
+insert into ITEM_TYPE (NAME)
+values ('Mirror Server App');
 insert into ITEM_TYPE (NAME)
 values ('Database');
 
